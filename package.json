@@ -1,0 +1,19 @@
+{
+    "name": "flashcard-app",
+    "version": "1.0.0",
+    "description": "A flashcard application",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "seed": "node seeds/seed.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.3.4",
+        "express-session": "^1.17.2",
+        "mysql2": "^2.3.0",
+        "sequelize": "^6.6.5"
+    }
+}
