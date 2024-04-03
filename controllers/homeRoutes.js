@@ -27,9 +27,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/flashcard/:id', async (req, res) => { // Change project to flashcard
+router.get('/collection/:id', async (req, res) => { // Change project to flashcard
   try {
-    const flashcardData = await Flashcard.findByPk(req.params.id, {
+    const collectionData = await Collection.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,10 +38,10 @@ router.get('/flashcard/:id', async (req, res) => { // Change project to flashcar
       ],
     });
 
-    const flashcard = flashcardData.get({ plain: true });
+    const collection = collectionData.get({ plain: true });
 
-    res.render('flashcard', { // Change project to flashcard
-      ...flashcard,
+    res.render('collection', { // Change project to flashcard
+      ...collection,
       logged_in: req.session.logged_in
     });
   } catch (err) {
