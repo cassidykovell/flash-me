@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Flashcard App",
+      "question": "flashcard",
+      "answer": " flashcard answer",
+      "user_id": 1
+    },
+    {
+      "name": "Coding Challenge",
+      "question": "flashcard",
+      "answer": " flashcard answer",
+      "user_id": 2
+    },
+    {
+      "name": "Database Design",
+      "question": "flashcard",
+      "answer": " flashcard answer",
+      "user_id": 1
+    }
+  ]
+  
