@@ -1,0 +1,94 @@
+* {
+    background-color: rgb(255, 183, 50);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-title {
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 50px;
+    font-style: normal;
+    font-size: 30px;
+    background-color: pink;
+}
+
+.login-card {
+    width: 45%; 
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: pink;
+}
+
+label  {
+    background-color: pink;
+}
+
+.form-group {
+    padding: 5px;
+    background-color: pink;
+}
+
+.btn {
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#header-des {
+    display: flex;
+    justify-content: center;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+}
+
+#wel-nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 50px;
+    font-style: normal;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+#right-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-btn {
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: bolder;
+    padding: 5px;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.horizontal-line {
+    border-top: 5px solid black;
+    width: 100%;
+  }
+
+#feed-nav {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .login-card {
+        width: 100%;
+    }
+}
