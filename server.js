@@ -1,7 +1,6 @@
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
-const apiRoutes = require('./controllers/index');
 
 
 const sequelize = require('./config/connection');
@@ -38,7 +37,6 @@ app.use(express.static('public'));
 
 // Use routes defined in controllers
 app.use(routes);
-app.use('/api', apiRoutes);
 // Start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
