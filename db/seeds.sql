@@ -16,4 +16,5 @@ VALUES ("HTML", "What does HTML stand for?", "Hyper Text Markup Language", "1"),
     ("JavaScript", "Where is the correct place to insert a JavaScript?", "You can insert a JavaScript both in the <head> section and the <body> section.", "3"),
     ("JavaScript", "Which event occurs when the user clicks on an HTML element?", "onclick", "3"),
     ("SQL", "What does SQL stand for?", "Structured Query Language", "4"),
-    ("SQL", "")
+    ("SQL", "What does RDBMS stand for?", "Relational Database Management System", "4"),
+    ("SQL", )
