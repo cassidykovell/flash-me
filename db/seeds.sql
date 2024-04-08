@@ -17,4 +17,5 @@ VALUES ("HTML", "What does HTML stand for?", "Hyper Text Markup Language", "1"),
     ("JavaScript", "Which event occurs when the user clicks on an HTML element?", "onclick", "3"),
     ("SQL", "What does SQL stand for?", "Structured Query Language", "4"),
     ("SQL", "What does RDBMS stand for?", "Relational Database Management System", "4"),
-    ("SQL", )
+    ("SQL", "What is a NULL value?", "A field with a NULL value is a field with no value.", "4" ),
+    ("")
