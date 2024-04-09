@@ -18,4 +18,6 @@ VALUES ("HTML", "What does HTML stand for?", "Hyper Text Markup Language", "1"),
     ("SQL", "What does SQL stand for?", "Structured Query Language", "4"),
     ("SQL", "What does RDBMS stand for?", "Relational Database Management System", "4"),
     ("SQL", "What is a NULL value?", "A field with a NULL value is a field with no value.", "4" ),
-    ("")
+    ("jQuery", "What does a jQuery selector do?", "jQuery selectors allow you to select and manipulate HTML elements.", "5"),
+    ("jQuery", "What does the blur() method do?", "The blur() method attaches an event handler function to an HTML form field", "5"),
+    ("jQuery", "What are some jQuery fading methods?", "fadeIn() fadeOut() fadeToggle() fadeTo()", "5")
