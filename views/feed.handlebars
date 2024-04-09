@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flash Me!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="container">
+    <header>
+      <nav class="feed-nav">
+        <h1>HELLO, {{ username }}!</h1>
+        <div id="user-nav">
+            <button id="create-btn">CREATE FLASHCARDS</button>
+            <a class="pro-btn">PROFILE</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+        {{#each flashcardCollections}}
+            <div class="flashcard-collection">
+                <h2>{{title}}</h2>
+                <p>Posted by: {{username}}</p>
+            </div>
+        {{/each}}
+    </main>
+    <footer id="flash-footer">
+      <p></p>
+    </footer>
+  </body>
+</html>
