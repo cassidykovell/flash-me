@@ -10,24 +10,25 @@
       href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="container">
     <header>
       <nav class="feed-nav">
-        <h1>{{ username }}</h1>
+        <h1>HELLO, {{ username }}!</h1>
         <div id="user-nav">
             <button id="create-btn">CREATE FLASHCARDS</button>
-             <a class="pro-btn">FEED</a>
-            <a class="pro-btn">VIEW FAVORITES</a>
+            <a class="pro-btn">PROFILE</a>
         </div>
       </nav>
     </header>
-    <main id="feed-display">
-        <div class="flashcard-collection">
+    <main>
+        {{#each flashcardCollections}}
+            <div class="flashcard-collection">
                 <h2>{{title}}</h2>
+                <p>Posted by: {{username}}</p>
             </div>
+        {{/each}}
     </main>
     <footer id="flash-footer">
       <p></p>
