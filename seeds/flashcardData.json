@@ -1,21 +1,103 @@
 [
     {
-      "name": "Flashcard App",
-      "question": "flashcard",
-      "answer": " flashcard answer",
+      "name": "HTML",
+      "question": "What does HTML stand for?",
+      "answer": "Hyper Text Markup Language",
       "user_id": 1
     },
     {
-      "name": "Coding Challenge",
-      "question": "flashcard",
-      "answer": " flashcard answer",
+      "name": "HTML",
+      "question": "Who is making the Web standards?", 
+      "answer": "The World Wide Web Consortium", 
+      "user_id": 1
+    },
+    {
+      "name": "HTML",
+      "question": "In HTML, which attribute is used to specify that an input field must be filled out?",
+      "answer": "required",
+      "user_id": 1
+    },
+    {
+      "name": "CSS",
+      "question": "What does CSS stand for?", 
+      "answer": "Cascading Style Sheet", 
       "user_id": 2
     },
     {
-      "name": "Database Design",
-      "question": "flashcard",
-      "answer": " flashcard answer",
-      "user_id": 1
-    }
+      "name": "CSS",
+      "question": "What is CSS used for?", 
+      "answer": "CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.", 
+      "user_id": 2
+    },
+    {
+      "name": "CSS", 
+      "question": "What does a CSS rule consist of?", 
+      "answer": "A CSS rule consits of a selector and a declaration block.", 
+      "user_id": 2
+    },
+    {
+      "name": "JavaScript", 
+      "question": "What is a JavaScript function?", 
+      "answer": "A JavaScript function is a block of JavaScript code, that can be executed when called for.", 
+      "user_id": 3
+    },
+    {
+      "name": "JavaScript", 
+      "question": "Where is the correct place to insert a JavaScript?", 
+      "answer": "You can insert a JavaScript both in the <head> section and the <body> section.",
+      "user_id": 3
+    },
+    {
+      "name": "JavaScript", 
+      "question": "Which event occurs when the user clicks on an HTML element?", 
+      "answer": "onclick", 
+      "user_id": 3
+    },
+    {
+      "name": "SQL", 
+      "question": "What does SQL stand for?", 
+      "answer": "Structured Query Language", 
+      "user_id": 4
+    },
+    {
+      "name": "SQL", 
+      "question": "What does RDBMS stand for?", 
+      "answer": "Relational Database Management System", 
+      "user_id": 4
+    },
+    {
+      "name": "SQL", 
+      "question": "What is a NULL value?", 
+      "answer": "A field with a NULL value is a field with no value.",
+      "user_id": 4
+    },
+    {
+      "name": "jQuery", 
+      "question": "What does a jQuery selector do?", 
+      "answer": "jQuery selectors allow you to select and manipulate HTML elements.",
+      "user_id": 5
+    },
+    {
+      "name": "jQuery", 
+      "question": "What does the blur() method do?", 
+      "answer": "The blur() method attaches an event handler function to an HTML form field", 
+      "user_id": 5
+    },
+    {
+      "name": "jQuery",
+      "question": "What are some jQuery fading methods?", 
+      "answer": "fadeIn() fadeOut() fadeToggle() fadeTo()", 
+      "user_id": 5
+    },
+
+
+
+
+
+
+
+
+
+
   ]
   
