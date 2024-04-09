@@ -1,18 +1,31 @@
 [
     {
-      "username": "name1",
-      "email": "name1@email.com",
-      "password": "password123"
+      "username": "Anna123", 
+      "email": "annabanana@yahoo.com", 
+      "password":"password123"
     },
     {
-      "username": "name2",
-      "email": "name2@email.com",
-      "password": "password123"   
+      "username": "BrianG", 
+      "email": "briang@yahoo.com", 
+      "password": "brianspass"  
      },
     {
-      "username": "name3",
-      "email": "name3@email.com",
-      "password": "password123"
-        }
+      "username": "Frankie22", 
+      "email": "frankie22@yahoo.com", 
+      "password": "frankspass22"
+    },
+    {
+      "username": "Tina33", 
+      "email": "tinamina@gmail.com", 
+      "password": "mypass33"
+    },
+    {
+      "username": "Derek", 
+      "email": "dereks4@gmail.com", 
+      "password": "passforderek"
+    }
   ]
+  
+  
+  
   
