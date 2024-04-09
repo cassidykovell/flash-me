@@ -1,10 +1,30 @@
 const router = require('express').Router();
-const { Flashcard, User } = require('../models');
+const { Flashcard, User, Collection } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  res.render('homepage')
+
+})
+
+router.get('/about', async (req, res) => {
+  res.render('about')
+  
+})
+
+router.get('/login', async (req, res) => {
+  res.render('login')
+  
+})
+
+router.get('/profile', async (req, res) => {
+  res.render('profile')
+  
+})
+
+router.get('/feed', async (req, res) => {
   try {
-    const flashcardData = await Flashcard.findAll({
+    const collectionData = await Collection.findAll({
       include: [
         {
           model: User,
@@ -13,11 +33,13 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const flashcards = flashcardData.map((flashcard) => flashcard.get({ plain: true }));
+    const collections = collectionData.map((collection) => collection.get({ plain: true }));
+    console.log(collections)
 
-    res.render('homepage', { 
-      flashcards, 
-      logged_in: req.session.logged_in 
+    res.render('feedpage', { 
+      collections, 
+      logged_in: req.session.logged_in,
+      layout: 'feed'
     });
   } catch (err) {
     res.status(500).json(err);

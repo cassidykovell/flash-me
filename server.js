@@ -1,11 +1,11 @@
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
-
+const exphbs = require('express-handlebars');
 
 const sequelize = require('./config/connection');
 
-// Other code...
+const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,6 +25,9 @@ const sess = {
 
 // Use session middleware
 app.use(session(sess));
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // Parse incoming JSON data
 app.use(express.json());

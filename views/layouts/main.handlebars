@@ -1,43 +1,33 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flash Me!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body class="container">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="container">
     <header>
-        <nav id="wel-nav">
-            <h1>Flash Me</h1>
-            <div id="right-nav">
-                {{#if isLoggedIn}}
-                    <a href="/feed">Feed</a>
-                {{else}}
-                    <button id="sign-btn">Sign Up!</button>
-                    <a href="/login">Log In</a>
-                {{/if}}
-            </div>
-        </nav>
+      <nav id="wel-nav">
+        <h1>Flash Me</h1>
+        <div id="right-nav">
+          <a href="/about" class="nav-btn">ABOUT</a>
+          <a href="/feed" class="nav-btn">FEED</a>
+          <a href="/login" class="nav-btn">LOG IN</a>
+        </div>
+      </nav>
     </header>
     <main>
-        {{#if showLoginForm}}
-            {{> loginForm}}
-        {{else if showSignupForm}}
-            {{> signupForm}}
-        {{else if showAboutPage}}
-            <h2>About Us</h2>
-            <p>Welcome to our website. We strive to provide the best experience for our users.</p>
-        {{else}}
-            <h2 id="flash-main">FLASH ME!</h2>
-        {{/if}}
+      {{{body}}}
     </main>
     <footer id="flash-footer">
-        <p>For Your Flashing Needs!</p>
+      <p>For Your Flashing Needs!</p>
     </footer>
-    <script src="../../public/js/main.js"></script>
-</body>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
