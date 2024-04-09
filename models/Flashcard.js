@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Collection = require('./Collection');
 
 class Flashcard extends Model {}
 
@@ -12,6 +11,10 @@ Flashcard.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    flashcardTitle: { // Changed from "name" to "flashcardTitle"
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     question: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,20 +23,25 @@ Flashcard.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    collection_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: Collection,
-        key: 'id',
-      },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    }
   },
   {
     sequelize,
     timestamps: true,
     underscored: true,
+    freezeTableName: true,
     modelName: 'Flashcard',
   }
 );
 
 module.exports = Flashcard;
+
