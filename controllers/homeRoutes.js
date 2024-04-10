@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
 
 router.get('/about', async (req, res) => {
   res.render('about')
-  
 })
 
 router.get('/login', async (req, res) => {
