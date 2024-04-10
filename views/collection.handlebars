@@ -1,0 +1,28 @@
+{{#if flashcards}}
+  <div class="collection">
+    <h2>{{collection.name}}</h2>
+    <div class="flashcard">
+      <h3>Flashcard {{currentIndex}} of {{totalFlashcards}}</h3>
+      <div class="content">
+        <p class="question">{{currentFlashcard.question}}</p>
+        <p class="answer" style="display: none;">{{currentFlashcard.answer}}</p>
+      </div>
+      <button onclick="toggleAnswer()">Show Answer</button>
+      <button onclick="nextFlashcard()">Next Flashcard</button>
+      <button onclick="toggleAllFlashcards()">Show All Flashcards</button>
+    </div>
+    <div class="flashcards-list" style="display: none;">
+      <h3>All Flashcards</h3>
+      {{#each flashcards}}
+        <div class="flashcard">
+          <p class="question">{{this.question}}</p>
+          <p class="answer">{{this.answer}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{else}}
+  <p>No flashcards in the collection.</p>
+{{/if}}
+
+<script src="../public/js/flashcardLogic.js"></script>
