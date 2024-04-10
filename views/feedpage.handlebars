@@ -8,13 +8,13 @@
         </div>
       </nav>
     </header>
-    <main id="feed-display">
+   <main id="feed-display">
     {{#each collections as |collection|}}
-<a href="/collection/:id"></a>
-<div class="flashcard-collection">
-    <h2>{{collection.name}}</h2>
-    <p>Posted by: {{collection.User.username}}</p>
-</div>
-</a> 
-{{/each}}
-    </main>
+        <a href="/collection/{{collection.id}}">
+            <div class="flashcard-collection">
+                <h2>{{collection.name}}</h2>
+                <p>Posted by: {{collection.User.username}}</p>
+            </div>
+        </a>
+    {{/each}}
+</main>

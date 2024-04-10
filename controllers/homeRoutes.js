@@ -62,25 +62,35 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
+router.get("/collection/:id", async (req, res) => {
+  try {
+      const collectionData = await Collection.findByPk(req.params.id, {
+          include: [
+              {
+                  model: User,
+                  attributes: ["username"],
+              },
+              {
+                  model: Flashcard, // Include the Flashcard model
+              },
+          ],
+      });
 
-// router.get('/profile', async (req, res) => {
-//   try {
-// //     const userData = await User.findByPk(req.session.user_id, {
-// //       attributes: { exclude: ['password'] },
-// //       include: [{ model: Collection }],
-// //     });
+      if (!collectionData) {
+          res.status(404).json({ message: 'Collection not found' });
+          return;
+      }
 
-// //     const user = userData.get({ plain: true });
-// // console.log(user)
-//     res.render('test', {
-//       // ...user,
-//       // logged_in: true,
-//       layout: 'feed'
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+      const collection = collectionData.get({ plain: true });
+
+      res.render("collection", {
+          collection,
+          logged_in: req.session.logged_in,
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
