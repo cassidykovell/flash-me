@@ -1,18 +1,24 @@
 [
     {
-      "question": "flashcard 1",
-      "answer": " flashcard answer 1",
-      "collection_id": 1
+
+
+      "flashcardTitle": "Flashcard App",
+      "question": "flashcard",
+      "answer": " flashcard answer",
+      "user_id": 1
     },
     {
-      "question": "flashcard 2",
-      "answer": " flashcard answer 2",
-      "collection_id": 1
+      "flashcardTitle": "Coding Challenge",
+      "question": "flashcard",
+      "answer": " flashcard answer",
+      "user_id": 2
     },
     {
-      "question": "flashcard 3",
-      "answer": " flashcard answer 3",
-      "collection_id": 2
+      "flashcardTitle": "Database Design",
+      "question": "flashcard",
+      "answer": " flashcard answer",
+      "user_id": 1
+
     }
   ]
   
