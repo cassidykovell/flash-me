@@ -10,19 +10,20 @@
       href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+   <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="container">
     <header>
       <nav class="feed-nav">
-        <h1>HELLO, {{ username }}!</h1>
+        <h1>HELLO, {{ user.username }}!</h1>
         <div id="user-nav">
-            <button id="create-btn">CREATE FLASHCARDS</button>
+            <a href="#"><button id="create-btn">CREATE FLASHCARDS</button></a>
             <a href="/profile" class="pro-btn">PROFILE</a>
+            <a href="/" class="pro-btn">BACK TO HOMEPAGE</a>
         </div>
       </nav>
     </header>
-    <main>
+    <main id="feed-display">
     {{{ body }}}
     </main>
     <footer id="flash-footer">

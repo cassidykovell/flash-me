@@ -24,7 +24,6 @@
   #right-nav {
     display: flex;
     justify-content: center;
-  
     flex: 1;
     margin-right: 150px;
   }
@@ -37,7 +36,8 @@
     font-style: normal;
   }
   
-  .nav-btn {
+  a {
+    color: rgb(244, 193, 245);
     font-family: "Rubik Scribble", system-ui;
     font-weight: bolder;
     padding: 5px;
@@ -45,6 +45,11 @@
     font-size: 20px;
     border-radius: 15px;
     font-weight: 500;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(241, 241, 241);
   }
   
   main {
@@ -69,10 +74,6 @@
   
   #sign-btn:hover {
     background-color: rgb(241, 241, 241);
-  }
-  
-  #feed-nav {
-    display: flex;
   }
   
   #flash-main {
@@ -113,75 +114,175 @@
   }
   
   #login-header {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      font-size: 100px;
-      font-family: "Unbounded", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
-      color: rgb(244, 193, 245);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 100px;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(244, 193, 245);
   }
   
   form {
-      display: flex;
-      justify-content: center;
+    display: flex;
+    justify-content: center;
   }
   
   #login-btn {
-      margin-left: 3em;
-      padding: 2px 10px 2px 10px;
-      font-family: "Unbounded", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 300;
-      font-style: normal;
-      background-color: transparent;
-      color: rgb(244, 193, 245);
-      border: 0.5px solid white;
-      border-radius: 25px;
+    margin-left: 3em;
+    padding: 2px 10px 2px 10px;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    background-color: transparent;
+    color: rgb(244, 193, 245);
+    border: 0.5px solid white;
+    border-radius: 25px;
   }
   
-  #username-login {
-      border-radius: 20px;
-      background-color: rgb(236, 217, 204);
+  #email-login {
+    border-radius: 20px;
+    background-color: rgb(236, 217, 204);
   }
   
   #password-login {
-      border-radius: 20px;
-      background-color: rgb(236, 217, 204);
+    border-radius: 20px;
+    background-color: rgb(236, 217, 204);
+  }
+  
+  #name-signup {
+  border-radius: 20px;
+  background-color: rgb(236, 217, 204);
+  }
+  
+  #email-signup {
+  border-radius: 20px;
+  background-color: rgb(236, 217, 204);
+  }
+  
+  #password-signup {
+  border-radius: 20px;
+  background-color: rgb(236, 217, 204);
   }
   
   #about {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      font-size: 100px;
-      font-family: "Unbounded", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
-      color: rgb(244, 193, 245);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 100px;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(244, 193, 245);
   }
   
   #signup-header {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      font-size: 100px;
-      font-family: "Unbounded", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
-      color: rgb(244, 193, 245);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 100px;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(244, 193, 245);
   }
   
   #about-p {
-      font-size: 20px;
+    font-size: 20px;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(244, 193, 245);
+    margin: 0px 90px 0px 90px;
+  }
+  
+  .feed-nav {
+    display: flex;
+    color: rgb(244, 193, 245);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    padding-left: 10px;
+    font-size: larger;
+  }
+  
+  .pro-btn {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1em;
+  }
+  
+  .pro-btn:hover {
+    color: rgb(241, 241, 241);
+  }
+  
+  #create-btn {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin-top: 10px;
+    background-color: transparent;
+    color: rgb(244, 193, 245);
+    padding: 10px 20px;
+    border: 0.5px solid white;
+    border-radius: 25px;
+    padding: 10px 30px 10px 30px;
+  }
+  
+  #create-btn:hover {
+    background-color: rgb(241, 241, 241);
+  }
+  
+  #feed-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em;
+  }
+  
+  .flashcard-collection {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 12px;
+    border: 0.5px solid white;
+    border-radius: 25px;
+    padding: 3em;
+    color: rgb(244, 193, 245);
+    background-color: rgba(230, 230, 213, 0.2);
+    position: relative;
+    margin: 0em .5em .5em .5em;
+  }
+  
+  .flashcard-collection:hover {
+      color: rgba(230, 230, 213);
+  }
+  
+  .user-col {
       font-family: "Unbounded", sans-serif;
       font-optical-sizing: auto;
-      font-weight: 600;
+      font-weight: 100;
       font-style: normal;
+      font-size: 12px;
+      border: 0.5px solid white;
+      border-radius: 25px;
+      padding: 3em;
       color: rgb(244, 193, 245);
-      margin: 0px 90px 0px 90px;
+      background-color: rgba(230, 230, 213, 0.2);
+      position: relative;
   }
+  
