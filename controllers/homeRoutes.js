@@ -42,7 +42,7 @@ router.get("/feed", async (req, res) => {
 });
 
 router.get("/profile", withAuth, async (req, res) => {
-  console.log('in profile', req.session)
+  console.log("in profile", req.session);
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
@@ -52,7 +52,7 @@ router.get("/profile", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
     console.log(user);
     res.render("profile", {
-      collections: user.Collections, 
+      collections: user.Collections,
       username: req.session.username,
       logged_in: req.session.logged_in,
       layout: "feed",
@@ -66,18 +66,13 @@ router.get("/collection/:id", async (req, res) => {
   try {
       const collectionData = await Collection.findByPk(req.params.id, {
           include: [
-              {
-                  model: User,
-                  attributes: ["username"],
-              },
-              {
-                  model: Flashcard, // Include the Flashcard model
-              },
-          ],
+              { model: User, attributes: ["username"] },
+              { model: Flashcard }
+          ]
       });
 
       if (!collectionData) {
-          res.status(404).json({ message: 'Collection not found' });
+          res.status(404).json({ message: "Collection not found" });
           return;
       }
 
@@ -85,7 +80,9 @@ router.get("/collection/:id", async (req, res) => {
 
       res.render("collection", {
           collection,
+          flashcards: collection.Flashcards,
           logged_in: req.session.logged_in,
+          layout: "feed"
       });
   } catch (err) {
       res.status(500).json(err);

@@ -286,3 +286,17 @@
       position: relative;
   }
   
+.flashcard-list {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 12px;
+  border: 0.5px solid white;
+  border-radius: 25px;
+  padding: 3em;
+  color: rgb(244, 193, 245);
+  background-color: rgba(230, 230, 213, 0.2);
+  position: relative;
+  margin: 0em .5em .5em .5em;
+}

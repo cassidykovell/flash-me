@@ -1,17 +1,16 @@
 {{#if flashcards.length}}
-  <div class="collection">
-    <h2>{{collection.name}}</h2>
-    <div class="flashcards-list">
-      <h3>All Flashcards</h3>
-      {{#each flashcards}}
-        <div class="flashcard">
-          <p class="question">{{this.question}}</p>
-          <p class="answer">{{this.answer}}</p>
+    <div class="collection">
+        <h2>{{collection.name}}</h2>
+        <div class="flashcards-list">
+            {{#each flashcards}}
+                <div class="flashcard">
+                    <p class="question">{{this.question}}</p>
+                    <p class="answer">{{this.answer}}</p>
+                </div>
+            {{/each}}
         </div>
-      {{/each}}
     </div>
-  </div>
 {{else}}
-  <p>No flashcards in the collection.</p>
+    <p>No flashcards in the collection.</p>
 {{/if}}
 <script src="../public/js/flashcardLogic.js"></script>
