@@ -15,6 +15,28 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.get("/collection/:id", async (req, res) => {
+  try {
+    const collectionData = await Collection.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"], // Changed from 'name' to 'username'
+        },
+      ],
+    });
+
+    const collection = collectionData.get({ plain: true });
+
+    res.render("collection", {
+      ...collection,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const collectionData = await Collection.destroy({
