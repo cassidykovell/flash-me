@@ -9,16 +9,19 @@ router.get('/', async (req, res) => {
 
 router.get('/about', async (req, res) => {
   res.render('about')
-  
 })
 
 router.get('/login', async (req, res) => {
   res.render('login')
-  
 })
 
 router.get('/profile', async (req, res) => {
   res.render('profile')
+  
+})
+
+router.get('/signup', async (req, res) => {
+  res.render('signup')
   
 })
 
