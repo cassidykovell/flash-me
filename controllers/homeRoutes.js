@@ -82,7 +82,7 @@ router.get("/collection/:id", async (req, res) => {
           collection,
           flashcards: collection.Flashcards,
           logged_in: req.session.logged_in,
-          layout: "feed"
+          layout: "feed",
       });
   } catch (err) {
       res.status(500).json(err);
