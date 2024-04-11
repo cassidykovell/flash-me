@@ -1,35 +1,36 @@
-document.getElementById('flashcardForm').addEventListener('submit', async function(event) {  //Change element Id
-    event.preventDefault(); 
+document.addEventListener('DOMContentLoaded', function() {
+    let flashcardData = [];
+    const collectionTitleInput = document.getElementById('flashcard-title');
+    const addFlashcardButton = document.getElementById('add-flashcard');
 
-    const collectionId = document.getElementById('collectionId').value; 
-    const flashcards = []; 
+    addFlashcardButton.addEventListener('click', function() {
+        const question = document.getElementById('flashcard-question').value;
+        const answer = document.getElementById('flashcard-answer').value;
 
-    document.querySelectorAll('.flashcard-inputs').forEach(input => {
-        const flashcardTitle = input.querySelector('.flashcardTitle').value;
-        const question = input.querySelector('.question').value;
-        const answer = input.querySelector('.answer').value;
+        flashcardData.push({ question, answer });
 
-        flashcards.push({ flashcardTitle, question, answer });
+        document.getElementById('flashcard-question').value = '';
+        document.getElementById('flashcard-answer').value = '';
+
+        collectionTitleInput.style.display = 'none';
+
+        console.log('Flashcard added:', { question, answer });
     });
 
-    try {
-        const response = await fetch('/api/flashcards/create', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ collectionId, flashcards })
-        });
+    document.getElementById('create-collection').addEventListener('click', function() {
+        const collectionTitle = collectionTitleInput.value;
 
-        if (!response.ok) {
-            throw new Error('Failed to create flashcards');
-        }
+        addFlashcardsToCollection(collectionTitle, flashcardData);
 
-        alert('Flashcards created successfully!');
-    } catch (error) {
-        console.error('Error creating flashcards:', error);
-    }
+        flashcardData = [];
+        collectionTitleInput.style.display = 'none';
+        addFlashcardButton.disabled = true; 
+
+        console.log('Collection created:', collectionTitle);
+    });
+
+    const addFlashcardsToCollection = async (collectionTitle, flashcardData) => {
+        console.log('Creating collection:', collectionTitle);
+        console.log('Flashcards:', flashcardData);
+    };
 });
-
-
-
