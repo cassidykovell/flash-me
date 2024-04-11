@@ -1,17 +1,27 @@
-{{#if flashcards.length}}
-  <div class="collection">
-    <h2>{{collection.name}}</h2>
-    <div class="flashcards-list">
-      <h3>All Flashcards</h3>
-      {{#each flashcards}}
-        <div class="flashcard">
-          <p class="question">{{this.question}}</p>
-          <p class="answer">{{this.answer}}</p>
-        </div>
-      {{/each}}
+<header>
+  <nav class="feed-nav">
+    <h1 id="flash-title">{{collection.name}}</h1>
+    <div id="user-nav">
+      <a href="/profile" class="pro-btn">PROFILE</a>
+      <a href="/feed" class="pro-btn">BACK TO FEED</a>
     </div>
-  </div>
-{{else}}
-  <p>No flashcards in the collection.</p>
-{{/if}}
-<script src="../public/js/flashcardLogic.js"></script>
+  </nav>
+</header>
+<main id="feed-display">
+  {{#if flashcards.length}}
+    <div class="collection">
+      <div class="flashcards-list">
+        {{#each flashcards}}
+          <div class="flashcard">
+            <p class="question">{{this.question}}</p>
+            <p class="answer">{{this.answer}}</p>
+            <div class="overlay"></div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{else}}
+    <p>No flashcards in the collection.</p>
+  {{/if}}
+</main>
+<script src="/js/flashcardFlip.js"></script>
