@@ -31,6 +31,27 @@ router.post("/create", async (req, res) => {
         return newFlashcard;
       })
     );
+    const updatedCollectionData = await collection.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Flashcard,
+        },
+      ],
+    });
+    const updatedCollections = updatedCollectionData.map((collection)=>
+  collection.get({ plain:true })
+    );
+    res.render("feedpage", {
+      collections: updatedCollections,
+      createdFlashcards,
+      logged_in: req.session.logged_in,
+      username: req.session.username,
+      layout: "feed"
+    });
 
     const jsonData = JSON.stringify(createdFlashcards, null, 2);
     const filePath = path.join(__dirname, "flashcardData.json");
