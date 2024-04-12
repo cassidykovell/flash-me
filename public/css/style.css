@@ -429,3 +429,30 @@ form {
   background-color: rgb(241, 241, 241);
 }
 
+#post {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  margin-top: 10px;
+  background-color: transparent;
+  color: rgb(244, 193, 245);
+  padding: 10px 20px;
+  border: 0.5px solid white;
+  border-radius: 25px;
+  padding: 10px 30px 10px 30px;
+}
+
+#post:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+@media (max-width: 425px) {
+  #flash-main { 
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 1024px) {
+  
+}

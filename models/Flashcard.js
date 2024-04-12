@@ -29,7 +29,13 @@ Flashcard.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    
+    collection_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Collection',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,

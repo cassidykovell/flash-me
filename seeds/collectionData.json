@@ -1,10 +1,22 @@
 [
     {
-        "name": "Javascript Terms",
+        "name": "HTML",
         "user_id": 1
     },
     {
-        "name": "HTML Terms",
+        "name": "CSS",
         "user_id": 2
+    },
+    {
+        "name": "Javascript",
+        "user_id": 3
+    },
+    {
+        "name": "SQL",
+        "user_id": 4
+    },
+    {
+        "name": "JQuery",
+        "user_id": 5
     }
 ]
