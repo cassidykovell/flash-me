@@ -4,77 +4,24 @@ const router = require("express").Router();
 const { Collection } = require("../../models");
 const { Flashcard } = require("../../models");
 
-router.get("/create", async (req, res) => {
+router.get("/", async (req, res) => {
+  console.log(' get request!!!!!!!!!!!!')
   res.render("flashcard", { layout: "feed" });
 });
 
-// router.post("/create", async (req, res) => {
-//   const { collectionId, flashcards } = req.body;
 
-//   try {
-//     const collection = await Collection.findByPk(collectionId);
+router.post("/", async (req, res) => {
 
-//     if (!collection) {
-//       return res.status(404).json({ error: "Collection not found" });
-//     }
-
-//     const createdFlashcards = await Promise.all(
-//       flashcards.map(async (flashcardData) => {
-//         const { question, answer } = flashcardData;
-
-//         const newFlashcard = await Flashcard.create({
-//           question,
-//           answer,
-//         });
-
-//         await newFlashcard.setCollection(collection);
-//         return newFlashcard;
-//       })
-//     );
-//     const updatedCollectionData = await collection.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ["username"],
-//         },
-//         {
-//           model: Flashcard,
-//         },
-//       ],
-//     });
-//     const updatedCollections = updatedCollectionData.map((collection)=>
-//   collection.get({ plain:true })
-//     );
-//     res.render("feedpage", {
-//       collections: updatedCollections,
-//       createdFlashcards,
-//       logged_in: req.session.logged_in,
-//       username: req.session.username,
-//       layout: "feed"
-//     });
-
-//     const jsonData = JSON.stringify(createdFlashcards, null, 2);
-//     const filePath = path.join(__dirname, "flashcardData.json");
-//     fs.writeFileSync(filePath, jsonData);
-
-//     res.status(201).json(createdFlashcards);
-//   } catch (error) {
-//     console.error("Error creating flashcards:", error);
-//     res.status(500).json({ error: "Failed to create flashcards" });
-//   }
-// });
-
-// module.exports = router;
-router.post("/create", async (req, res) => {
-  const { collectionTitle, flashcards } = req.body;
-
+  const { title, flashcards } = req.body;
+console.log('req.body', req.body)
+console.log('req.session', req.session)
   if (!flashcards || flashcards.length === 0) {
     return res.status(400).json({ error: "No flashcards provided" });
   }
 
   try {
-    const collection = await Collection.create({ title: collectionTitle });
-
+    const collection = await Collection.create({ name: title, user_id: req.session.user_id });
+console.log('collection', collection)
     const createdFlashcards = await Promise.all(
       flashcards.map(async (flashcardData) => {
         const { question, answer } = flashcardData;
@@ -82,8 +29,9 @@ router.post("/create", async (req, res) => {
         const newFlashcard = await Flashcard.create({
           question,
           answer,
+          collection_id: collection.collection_id
         });
-
+console.log('newFlashcard', newFlashcard)
         await newFlashcard.setCollection(collection);
         return newFlashcard;
       })
@@ -96,3 +44,5 @@ router.post("/create", async (req, res) => {
     res.status(500).json({ error: "Failed to create flashcards" });
   }
 });
+
+module.exports = router;
