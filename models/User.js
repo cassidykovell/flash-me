@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt'); 
-const sequelize = require('../config/connection'); 
+const connection = require('../config/connection'); 
 //fix commit 
 
 class User extends Model {
@@ -49,11 +49,11 @@ User.init(
         return updatedUserData;
       },
     },
-    sequelize,
     timestamps: false,
     underscored: true,
     freezeTableName: true,
     modelName: 'User',
+    sequelize: connection
   }
 );
 
