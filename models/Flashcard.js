@@ -32,7 +32,7 @@ Flashcard.init(
     collection_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Collection',
+        model: 'collection',
         key: 'id',
       },
     },
@@ -41,7 +41,8 @@ Flashcard.init(
     sequelize,
     timestamps: true, // Enable timestamps
     underscored: true,
-    modelName: 'Flashcard', // Change modelName to flashcard
+    freezeTableName: true,
+    modelName: 'flashcard', // Change modelName to flashcard
   }
 );
 

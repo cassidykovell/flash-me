@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection'); // Update connection path
-const User = require('./User');
 
 class Collection extends Model {} // Change class name to Flashcard
 
@@ -29,7 +28,7 @@ Collection.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: 'user',
         key: 'id',
       },
     },
@@ -38,7 +37,8 @@ Collection.init(
     sequelize,
     timestamps: true, // Enable timestamps
     underscored: true,
-    modelName: 'Collection', // Change modelName to flashcard
+    freezeTableName: true,
+    modelName: 'collection', // Change modelName to flashcard
   }
 );
 
