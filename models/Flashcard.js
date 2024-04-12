@@ -33,7 +33,7 @@ Flashcard.init(
     collection_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: Collection,
+        model: 'Collection',
         key: 'id',
       },
     },
