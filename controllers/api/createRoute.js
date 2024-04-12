@@ -4,9 +4,41 @@ const router = require("express").Router();
 const { Collection } = require("../../models");
 const { Flashcard } = require("../../models");
 
-router.get("/create", async (req, res) => {
-  res.render("flashcard", { layout: "feed" });
+
+
+router.post("/create", async (req, res) => {
+  const { collectionTitle, flashcards } = req.body;
+  
+  if (!flashcards || flashcards.length === 0) {
+    return res.status(400).json({ error: "No flashcards provided" });
+  }
+  
+  try {
+    // Create collection
+    const collection = await Collection.create({ name: collectionTitle });
+    
+    // Create flashcards and associate with the collection
+    const createdFlashcards = await Promise.all(
+      flashcards.map(async (flashcardData) => {
+        const { question, answer } = flashcardData;
+
+        const newFlashcard = await Flashcard.create({
+          question,
+          answer,
+          CollectionId: collection.id // Associate with the newly created collection
+        });
+
+        return newFlashcard;
+      })
+    );
+    
+    res.status(201).json(createdFlashcards);
+  } catch (error) {
+    console.error("Error creating flashcards:", error);
+    res.status(500).json({ error: "Failed to create flashcards" });
+  }
 });
+
 
 // router.post("/create", async (req, res) => {
 //   const { collectionId, flashcards } = req.body;
@@ -64,35 +96,4 @@ router.get("/create", async (req, res) => {
 //   }
 // });
 
-// module.exports = router;
-router.post("/create", async (req, res) => {
-  const { collectionTitle, flashcards } = req.body;
-
-  if (!flashcards || flashcards.length === 0) {
-    return res.status(400).json({ error: "No flashcards provided" });
-  }
-
-  try {
-    const collection = await Collection.create({ title: collectionTitle });
-
-    const createdFlashcards = await Promise.all(
-      flashcards.map(async (flashcardData) => {
-        const { question, answer } = flashcardData;
-
-        const newFlashcard = await Flashcard.create({
-          question,
-          answer,
-        });
-
-        await newFlashcard.setCollection(collection);
-        return newFlashcard;
-      })
-    );
-
-
-    res.status(201).json(createdFlashcards);
-  } catch (error) {
-    console.error("Error creating flashcards:", error);
-    res.status(500).json({ error: "Failed to create flashcards" });
-  }
-});
+module.exports = router;
