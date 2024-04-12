@@ -1,6 +1,6 @@
 const User = require('./User');
 const Flashcard = require('./Flashcard'); // Rename Project to Flashcard
-const Collection = require('/Collection');
+const Collection = require('./Collection');
 
 User.hasMany(Collection, {
   foreignKey: 'user_id',
