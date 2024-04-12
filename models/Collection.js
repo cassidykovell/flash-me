@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
+
 
 class Collection extends Model {}
 
@@ -19,7 +19,7 @@ Collection.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: 'User',
         key: 'id',
       },
     },
