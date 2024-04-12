@@ -9,7 +9,6 @@
         "dev": "nodemon server.js"
     },
     "dependencies": {
-    
         "bcrypt": "^5.1.1",
         "dotenv": "^10.0.0",
         "express": "^4.19.2",
@@ -23,8 +22,5 @@
         "nodemon": "^3.1.0",
         "sequelize": "^6.6.5",
         "underscore": "^1.13.6"
-    },
-    "engines": {
-        "node": "14.x"
     }
 }

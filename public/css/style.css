@@ -449,10 +449,82 @@ form {
 
 @media (max-width: 425px) {
   #flash-main { 
-    font-size: 4em;
+    font-size: 3.5em;
+  }
+
+  #right-nav {
+    margin-right: 0px;
+  }
+  
+  #right-nav a {
+    font-size: .5em;
+  }
+
+  a {
+    font-size: .1em;
+  }
+
+  .feed-nav {
+    font-size: .5em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  #create-btn {
+    font-size: .5em;
+    padding: 3px 5px 3px 5px;
+  }
+
+  #form-layout {
+    align-items: center;
+  }
+
+  #login-header {
+    font-size: 4em;;
+  }
+
+  .login {
+    padding: 1px;
+  }
+
+  #signup-header {
+    font-size: 3em;
+  }
+
+  #login-btn {
+    margin-left: 1px;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
   }
 }
 
-@media (max-width: 1024px) {
-  
+@media (max-width: 768px) {
+  #flash-main { 
+    font-size: 6em;
+  }
+
+  #right-nav {
+    justify-content: right;
+    margin-right: 0px;
+  }
+
+  a {
+    font-size: .3em;
+  }
+
+  .feed-nav {
+    font-size: .7em;
+  }
+
+  #create-flashcard-form {
+    width: 100%;
+  }
 }
