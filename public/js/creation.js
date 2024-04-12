@@ -2,12 +2,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const collectionTitleInput = document.getElementById('flashcard-title');
     const addFlashcardButton = document.getElementById('add-flashcard');
     const createCollectionButton = document.getElementById('create-collection');
-    const allDoneButton = document.getElementById('all-done');
+    const postButton = document.getElementById('post'); 
     const flashcardQuestionInput = document.getElementById('flashcard-question');
     const flashcardAnswerInput = document.getElementById('flashcard-answer');
     const flashcardContainer = document.getElementById('flashcard-container');
     let currentCollection = null;
     const flashcardData = [];
+
+    postButton.addEventListener('click', async function() {
+        console.log('currentCollection', currentCollection)
+        if (!currentCollection) {
+            console.error('Create a collection first');
+            return;
+        }
+    
+        try {
+console.log('fetching now')
+            const response = await fetch('/api/create', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(currentCollection)
+            });
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Collection saved:', data);
+                currentCollection = null;
+                flashcardData.length = 0;
+                flashcardContainer.innerHTML = '';
+            } else {
+                throw new Error('Network response was not ok. Status: ' + response.status);
+            }
+        } catch (error) {
+            console.error('Error saving collection:', error);
+        }
+    });
 
     createCollectionButton.addEventListener('click', function() {
         const collectionTitle = collectionTitleInput.value.trim();
@@ -36,36 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Flashcard added:', { question, answer });
     });
 
-    allDoneButton.addEventListener('click', function() {
-        if (!currentCollection) {
-            console.error('Create a collection first');
-            return;
-        }
-
-        fetch('/save-collection', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(currentCollection)
-        })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Network response was not ok. Status: ' + response.status);
-            }
-        })
-        .then(data => {
-            console.log('Collection saved:', data);
-            currentCollection = null;
-            flashcardData.length = 0;
-            flashcardContainer.innerHTML = ''; 
-        })
-        .catch(error => {
-            console.error('Error saving collection:', error);
-        });
-    });
 
     function renderFlashcards() {
         flashcardContainer.innerHTML = ''; 
