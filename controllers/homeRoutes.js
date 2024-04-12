@@ -6,12 +6,12 @@ router.get('/', async (req, res) => {
   try {
     // Get all flashcards and JOIN with user data
     const flashcardData = await Flashcard.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'], // Update name to username
-        },
-      ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['username'], // Update name to username
+      //   },
+      // ],
     });
 
     // Serialize data so the template can read it
