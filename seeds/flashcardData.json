@@ -1,18 +1,78 @@
 [
   {
-    "question": "flashcard",
-    "answer": "flashcard answer",
+    "question": "What does HTML stand for?",
+    "answer": "Hyper Text Markup Language",
     "collection_id": 1
   },
   {
-    "question": "flashcard",
-    "answer": "flashcard answer",
+    "question": "Who is making the Web standards?", 
+    "answer": "The World Wide Web Consortium", 
+    "collection_id": 1
+  },
+  {
+    "question": "In HTML, which attribute is used to specify that an input field must be filled out?",
+    "answer": "required",
+    "collection_id": 1
+  },
+  {
+    "question": "What does CSS stand for?", 
+    "answer": "Cascading Style Sheet", 
     "collection_id": 2
   },
   {
-    "question": "flashcard",
-    "answer": "flashcard answer",
-    "collection_id": 1
+    "question": "What is CSS used for?", 
+    "answer": "CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.", 
+    "collection_id": 2
+  },
+  {
+    "question": "What does a CSS rule consist of?", 
+    "answer": "A CSS rule consits of a selector and a declaration block.", 
+    "collection_id": 2
+  },
+  {
+    "question": "What is a JavaScript function?", 
+    "answer": "A JavaScript function is a block of JavaScript code, that can be executed when called for.", 
+    "collection_id": 3
+  },
+  {
+    "question": "Where is the correct place to insert a JavaScript?", 
+    "answer": "You can insert a JavaScript both in the <head> section and the <body> section.",
+    "collection_id": 3
+  },
+  {
+    "question": "Which event occurs when the collection clicks on an HTML element?", 
+    "answer": "onclick", 
+    "collection_id": 3
+  },
+  {
+    "question": "What does SQL stand for?", 
+    "answer": "Structured Query Language", 
+    "collection_id": 4
+  },
+  {
+    "question": "What does RDBMS stand for?", 
+    "answer": "Relational Database Management System", 
+    "collection_id": 4
+  },
+  {
+    "question": "What is a NULL value?", 
+    "answer": "A field with a NULL value is a field with no value.",
+    "collection_id": 4
+  },
+  {
+    "question": "What does a jQuery selector do?", 
+    "answer": "jQuery selectors allow you to select and manipulate HTML elements.",
+    "collection_id": 5
+  },
+  {
+    "question": "What does the blur() method do?", 
+    "answer": "The blur() method attaches an event handler function to an HTML form field", 
+    "collection_id": 5
+  },
+  {
+    "question": "What are some jQuery fading methods?", 
+    "answer": "fadeIn() fadeOut() fadeToggle() fadeTo()", 
+    "collection_id": 5
   }
 ]
   
