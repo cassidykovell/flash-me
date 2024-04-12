@@ -11,10 +11,6 @@ Flashcard.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    flashcardTitle: { // Changed from "name" to "flashcardTitle"
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     question: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,7 +28,8 @@ Flashcard.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    }
+    },
+    
   },
   {
     sequelize,

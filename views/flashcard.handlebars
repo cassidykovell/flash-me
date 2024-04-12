@@ -1,0 +1,28 @@
+
+<header>
+    <nav class="feed-nav">
+        <h1>CREATE FLASHCARDS!</h1>
+        <div id="user-nav">
+            <a href="/profile" class="pro-btn">PROFILE</a>
+            <a href="/feed" class="pro-btn">BACK TO FEED</a>
+        </div>
+    </nav>
+</header>
+<main id='form-layout'>
+    <div id="create-flashcard-modal" class="modal">
+        <div class="modal-content">
+            <form id="create-flashcard-form">
+                <label for="flashcard-title">Flashcard Set Title:</label>
+                <input type="text" id="flashcard-title" name="title" required>
+                <label for="flashcard-question">Question:</label>
+                <input type="text" id="flashcard-question" name="question" required>
+                <label for="flashcard-answer">Answer:</label>
+                <input type="text" id="flashcard-answer" name="answer" required>
+                <button id="add-flashcard" type="button">Add Flashcard</button>
+                <button id="create-collection" type="button">Create Collection</button>
+            </form>
+        </div>
+    </div>
+     <div id="flashcard-container"></div>
+    <script src="/js/creation.js"></script>
+</main>

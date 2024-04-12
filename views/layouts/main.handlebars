@@ -18,7 +18,11 @@
         <div id="right-nav">
           <a href="/about" class="nav-btn">ABOUT</a>
           <a href="/feed" class="nav-btn">FEED</a>
+          {{#if logged_in}}
+          <a href="#" class="nav-btn" id="logout">LOG OUT</a>
+          {{else}}
           <a href="/login" class="nav-btn">LOG IN</a>
+          {{/if}}
         </div>
       </nav>
     </header>
@@ -28,6 +32,8 @@
     <footer id="flash-footer">
       <p>For Your Flashing Needs!</p>
     </footer>
-    <script src="./js/main.js"></script>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   </body>
 </html>

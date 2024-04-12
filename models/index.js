@@ -1,13 +1,22 @@
 const User = require('./User');
-const Flashcard = require('./Flashcard'); // Update import to include Flashcard model
+const Collection = require('./Collection');
+const Flashcard = require('./flashcard');
 
-User.hasMany(Flashcard, { // Update association to connect User with Flashcard
+User.hasMany(Collection, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Flashcard.belongsTo(User, { // Update association to connect Flashcard with User
+Collection.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Flashcard };
+Collection.hasMany(Flashcard, {
+  foreignKey: 'collection_id'
+});
+
+Flashcard.belongsTo(Collection, {
+  foreignKey: 'collection_id',
+});
+
+module.exports = { User, Collection, Flashcard };

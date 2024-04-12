@@ -1,35 +1,36 @@
 const router = require('express').Router();
-const { Flashcard } = require('../../models'); // Update Project to Flashcard
+const { Collection } = require('../../models'); 
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newFlashcard = await Flashcard.create({
+    const newCollection = await Collection.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newFlashcard);
+    res.status(200).json(newCollection);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const flashcardData = await Flashcard.destroy({
+    const collectionData = await Collection.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!flashcardData) {
-      res.status(404).json({ message: 'No flashcard found with this id!' });
+    if (!collectionData) {
+      res.status(404).json({ message: 'No collection found with this id!' });
       return;
     }
 
-    res.status(200).json(flashcardData);
+    res.status(200).json(collectionData);
   } catch (err) {
     res.status(500).json(err);
   }
