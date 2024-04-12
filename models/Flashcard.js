@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection'); // Update connection path
-const Collection = require('/Collection');
 
 class Flashcard extends Model {} // Change class name to Flashcard
 
