@@ -1,7 +1,7 @@
 const User = require('./User');
 const Collection = require('./Collection');
-const Flashcard = require('./flashcard');
-
+const Flashcard = require('./Flashcard');
+//fixing cap comment
 User.hasMany(Collection, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
