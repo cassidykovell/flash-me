@@ -1,5 +1,7 @@
 ## flash-me 
 
+https://flash-me-8481dc8f6f3f.herokuapp.com/
+
 ## Table of Contents
 [Description](#description)
 [Features](#features)
@@ -36,13 +38,15 @@ Handlebars.js
 ## Usage
 To use this application sign in and either view other users posts, navigate to your profile to view your own posts, or click on "Create Flashcards" to create your own.
 
-![alttext](./assets/SC.png)
+![alttext](./assets/images/deployed.png)
+![alttext](./assets/images/erd.png)
 
 ## Links
 Github Repository
 https://github.com/cassidykovell/flash-me
 
 Deployed
+https://flash-me-8481dc8f6f3f.herokuapp.com/
 
 ## Credits
 Cassidy Kovell, Rishi Alluri and Airin Grigorian
