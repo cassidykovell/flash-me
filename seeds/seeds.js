@@ -14,13 +14,6 @@ const seedDatabase = async () => {
   });
   await Collection.bulkCreate(collectionData);
   await Flashcard.bulkCreate(flashcardData);
-  // for (const flashcard of flashcardData) { // Update Project to Flashcard
-  //   await Flashcard.create({ // Update Project to Flashcard
-  //     ...flashcard,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
-
   process.exit(0);
 };
 
