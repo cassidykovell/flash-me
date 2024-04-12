@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     postButton.addEventListener('click', async function() {
         console.log('currentCollection', currentCollection)
-        if (!currentCollection) {
+        if (_.isEmpty(currentCollection)) {
             console.error('Create a collection first');
             return;
         }
@@ -43,7 +43,7 @@ console.log('fetching now')
     createCollectionButton.addEventListener('click', function() {
         const collectionTitle = collectionTitleInput.value.trim();
 
-        if (!collectionTitle) {
+        if (_.isEmpty(collectionTitle)) {
             console.error('Collection title is required');
             return;
         }
