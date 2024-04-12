@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection'); // Update connection path
+const sequelize = require('../config/connection');
 
-class Flashcard extends Model {} // Change class name to Flashcard
+class Flashcard extends Model {}
 
 Flashcard.init(
   {
@@ -11,20 +11,20 @@ Flashcard.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    question: { // Add question attribute
+    question: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    answer: { // Add answer attribute
+    answer: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    createdAt: { // Add createdAt attribute
+    createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    updatedAt: { // Add updatedAt attribute
+    updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
@@ -39,11 +39,12 @@ Flashcard.init(
   },
   {
     sequelize,
-    timestamps: true, // Enable timestamps
+    timestamps: true,
     underscored: true,
     freezeTableName: true,
-    modelName: 'flashcard', // Change modelName to flashcard
+    modelName: 'flashcard',
   }
 );
 
 module.exports = Flashcard;
+

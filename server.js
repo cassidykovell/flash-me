@@ -1,28 +1,16 @@
-const path = require('path');
 const express = require('express');
 const session = require('express-session');
-// const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-
-
-
+const exphbs = require('express-handlebars');
 
 const sequelize = require('./config/connection');
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Database connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
-
+const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
+// Session configuration
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -35,19 +23,24 @@ const sess = {
   saveUninitialized: true,
 };
 
-
+// Use session middleware
 app.use(session(sess));
 
-// Inform Express.js on which template engine to use
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
+// Parse incoming JSON data
 app.use(express.json());
+
+// Parse incoming form data
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve static files from the public directory
+app.use(express.static('public'));
+
+// Use routes defined in controllers
 app.use(routes);
-
+// Start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 });

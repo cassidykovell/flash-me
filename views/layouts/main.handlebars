@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flash Me!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="container">
+    <header>
+      <nav id="wel-nav">
+        <h1>Flash Me</h1>
+        <div id="right-nav">
+          <a href="/about" class="nav-btn">ABOUT</a>
+          <a href="/feed" class="nav-btn">FEED</a>
+          {{#if logged_in}}
+          <a href="#" class="nav-btn" id="logout">LOG OUT</a>
+          {{else}}
+          <a href="/login" class="nav-btn">LOG IN</a>
+          {{/if}}
+        </div>
+      </nav>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer id="flash-footer">
+      <p>For Your Flashing Needs!</p>
+    </footer>
+  {{#if logged_in}}
+  <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  </body>
+</html>

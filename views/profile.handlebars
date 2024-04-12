@@ -1,0 +1,19 @@
+<header>
+  <nav class="feed-nav">
+    <h1>{{username}}!</h1>
+    <div id="user-nav">
+      <a href="/create"><button id="create-btn">CREATE FLASHCARDS</button></a>
+      <a href="/feed" class="pro-btn">FEED</a>
+      <a href="/" class="pro-btn">BACK TO HOMEPAGE</a>
+    </div>
+  </nav>
+</header>
+<main id="feed-display">
+  {{#each collections as |collection|}}
+    <a href="/collection/{{collection.id}}">
+      <div class="per-flash">
+        {{collection.name}}
+      </div>
+    </a>
+  {{/each}}
+</main>
